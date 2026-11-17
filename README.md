@@ -6,7 +6,7 @@ Unofficial fan patch for **The Last Stand: Union City**, as sold on Steam in
 This repository contains **no game files and no Con Artist code**. Releases ship a small
 binary delta that only works on top of the player's own Steam copy.
 
-## What it does
+## CURRENT FEATURES
 
 - Runs Union City in [Ruffle](https://ruffle.rs) instead of Adobe AIR, which removes the
   input lag in big hordes.
@@ -15,12 +15,12 @@ binary delta that only works on top of the player's own Steam copy.
 - Keeps Steam playtime, "Now playing", the overlay and achievements, through a small launcher.
 - **F9** shows a performance overlay (FPS, worst frame, zombie and object counts).
 
-## For players
+## INSTALLATION GUIDE
 
 Download the latest release zip, unzip it anywhere and run `LSUCLauncher.exe`.
 `README.txt` in the zip has the details, including the Steam launch option.
 
-## How it works
+## TECHNICAL DETAILS
 
 | Part | Where |
 |---|---|
@@ -36,7 +36,7 @@ It then loads the game's own `steam_api64.dll`, registers as app 1615100, starts
 listens on `127.0.0.1:47615` for achievement IDs sent by the game over an XMLSocket.
 Only Union City's IDs (`ACH_13`-`ACH_18`, `ACH_21`) are accepted.
 
-### Changes to the game
+### CHANGS IN THE CODE
 
 1. `frame_1` script: `mod/lscp.as` is compiled separately and appended as bytecode. It wraps
    `sendSteamMessage` to also notify the launcher, starts the game when no AIR wrapper answers,
@@ -47,7 +47,7 @@ Only Union City's IDs (`ACH_13`-`ACH_18`, `ACH_21`) are accepted.
    four gradient strips. Past roughly 1700 px of window width the filter surface exceeded GPU
    limits and the raw yellow block showed.
 
-## Building
+## BUILDING
 
 Requirements: Windows, the Steam game installed, Java 8+, Python 3 (`py` launcher),
 [JPEXS FFDec](https://github.com/jindrapetrik/jpexs-decompiler) unzipped to `tools/ffdec`,
