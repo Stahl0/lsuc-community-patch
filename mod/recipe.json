@@ -1,0 +1,19 @@
+[
+  {
+    "what": "community patch code (edge glow, start without AIR, F9 overlay, Steam achievements), compiled from lscp.as and appended",
+    "script": "frame_1/DoAction.pcode",
+    "append_compiled": "lscp.as"
+  },
+  {
+    "what": "P pauses like Escape, so fullscreen survives pausing",
+    "script": "frame_3/DoAction.pcode",
+    "after": "Push register0, 27\nStrictEquals\nIf loc61472\n",
+    "insert": "frame_3-pausekey.pcode"
+  },
+  {
+    "what": "replace the level-sized yellow block + glow filter with drawBoundsGlow()",
+    "script": "frame_3/DoAction.pcode",
+    "regex": "loc7019e:Push \"depth_world_boundsGlow\"\\n(?:.*\\n)*?Push \"glowTo\"\\nCallMethod\\n",
+    "replace": "loc7019e:Push 0, \"drawBoundsGlow\"\nCallFunction\n"
+  }
+]

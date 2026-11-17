@@ -1,0 +1,14 @@
+original/
+decompiled/
+patches/
+work/
+build/
+dist/
+game/
+tools/
+save-backups/
+*.swf
+*.sol
+*.delta
+*.exe
+launcher.log

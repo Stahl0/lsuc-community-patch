@@ -1,0 +1,3 @@
+Push register0, 80
+StrictEquals
+If loc61472
